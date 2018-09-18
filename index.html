@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<link href="css/moonToast.css" rel="stylesheet" />
+		<title>提示插件测试</title>
+	</head>
+	<body>
+		<button onclick="showTip( 'left-top' )"> 弹出左上方提示 </button>
+		
+		<button onclick="showTip( 'right-bottom' )"> 弹出右下方提示 </button>
+		
+		<script type="text/javascript" src="js/jquery-1.9.1.min.js" ></script>
+		<script src="js/moonToast.js"></script>
+		
+		<script type="text/javascript">
+			function showTip( type ){
+				if( type == "left-top" ){
+					
+					moonToast({
+						message: '提示!', 
+						type: 'black', 
+						icon : "success",
+						position:'left-top',
+						dataObj : {
+							con : "天空之城"
+						},
+						onClick : function( plugin ){
+							alert( "点击" );
+						},
+						onClose : function( plugin ){
+							alert( "关闭" );
+
+						}
+					})
+					
+				}else if( type == "right-bottom" ){
+					moonToast({
+						message: '提示!', 
+						type: 'green', 
+						icon : "success",
+						position:'right-bottom',
+						timeout: 2000,
+					})
+				}
+				
+				
+			}
+		</script>
+		
+		
+	</body>
+</html>
